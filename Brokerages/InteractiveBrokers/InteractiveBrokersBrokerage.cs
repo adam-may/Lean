@@ -136,7 +136,8 @@ namespace QuantConnect.Brokerages.InteractiveBrokers
             { Market.OseJpn, "OSE.JPN" },
             { Market.CDE, "CDE" },
             { Market.SNFE, "SNFE" },
-            { Market.DTB, "DTB" }
+            { Market.DTB, "DTB" },
+            { Market.ICEEU, "ICEEU" }
         };
 
         // exchange time zones by symbol

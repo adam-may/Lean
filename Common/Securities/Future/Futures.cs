@@ -703,6 +703,11 @@ namespace QuantConnect.Securities
             /// GBL Future
             /// </summary>
             public const string GBL = "GBL";
+
+            /// <summary>
+            /// SG Future
+            /// </summary>
+            public const string SG = "SG";
         }
 
         /// <summary>

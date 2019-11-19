@@ -60,7 +60,8 @@ namespace QuantConnect
             Tuple.Create(OseJpn, 23),
             Tuple.Create(CDE, 24),
             Tuple.Create(SNFE, 25),
-            Tuple.Create(DTB, 26)
+            Tuple.Create(DTB, 26),
+            Tuple.Create(ICEEU, 27)
         };
 
         static Market()
@@ -204,6 +205,11 @@ namespace QuantConnect
         /// Eurex (DTB)
         /// </summary>
         public const string DTB = "dtb";
+
+        /// <summary>
+        /// ICE Europe
+        /// </summary>
+        public const string ICEEU = "iceeu";
 
         /// <summary>
         /// Adds the specified market to the map of available markets with the specified identifier.

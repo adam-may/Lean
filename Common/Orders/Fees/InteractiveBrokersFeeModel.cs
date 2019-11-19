@@ -41,6 +41,7 @@ namespace QuantConnect.Orders.Fees
                 { Market.CDE, new CashAmount(2.40m, "CAD") },
                 { Market.SNFE, new CashAmount(5.00m, "AUD") },
                 { Market.DTB, new CashAmount(2.00m, "EUR") },
+                { Market.ICEEU, new CashAmount(1.70m, "GBP") },
             };
 
         /// <summary>
