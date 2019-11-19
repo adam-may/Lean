@@ -44,6 +44,7 @@ namespace QuantConnect.Tests.Common.Securities.Futures
         private const string EightOClockChicagoTime = "13:00:00";
         private const string TwelveOclock = "12:00:00";
         private const string TwelveOne = "12:01:00";
+        private const string OnePM = "13:00:00";
         private const string FourPmLondonTime = "15:00:00";
         private const string FiveSixteenSingaporeTime = "17:16:00";
         private const string ThreeOneJapanTime = "15:01:00";
@@ -219,6 +220,7 @@ namespace QuantConnect.Tests.Common.Securities.Futures
         [TestCase(QuantConnect.Securities.Futures.Financials.FiveYearUSDMACSwap, Market.USA, TwoPMCentralTime)]
         [TestCase(QuantConnect.Securities.Futures.Financials.SgxMiniJGBIndex, Market.SGX, FiveSixteenSingaporeTime)]
         [TestCase(QuantConnect.Securities.Futures.Financials.JGB, Market.OseJpn, ThreeOneJapanTime)]
+        [TestCase(QuantConnect.Securities.Futures.Financials.CGB, Market.CDE, OnePM)]
         public void FinancialsExpiryDateFunction_WithDifferentDates_ShouldFollowContract(string symbol, string market, string dayTime)
         {
             Assert.IsTrue(_data.ContainsKey(symbol), "Symbol " + symbol + " not present in Test Data");

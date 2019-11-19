@@ -134,6 +134,7 @@ namespace QuantConnect.Brokerages.InteractiveBrokers
             { Market.CBOE, "CFE" },
             { Market.SGX, "SGX" },
             { Market.OseJpn, "OSE.JPN" },
+            { Market.CDE, "CDE" },
         };
 
         // exchange time zones by symbol

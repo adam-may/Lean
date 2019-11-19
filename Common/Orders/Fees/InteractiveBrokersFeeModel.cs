@@ -38,6 +38,7 @@ namespace QuantConnect.Orders.Fees
             {
                 { Market.USA, new CashAmount(0.85m + 1, "USD") },
                 { Market.SGX, new CashAmount(85.00m, "JPY") },
+                { Market.CDE, new CashAmount(2.40m, "CAD") },
             };
 
         /// <summary>

@@ -953,6 +953,21 @@ namespace QuantConnect.Securities.Future
                 })
             },
 
+            // 10-Year Canadian Government Bond Future
+            {Futures.Financials.CGB, (time =>
+                {
+                    // Trading ceases at 1:00 p.m. on the seventh business day preceding the last business day of the delivery month
+                    var holidays = MarketHoursDatabase.FromDataFolder()
+                        .GetEntry(Market.CDE, Futures.Financials.CGB, SecurityType.Future)
+                        .ExchangeHours
+                        .Holidays;
+
+                    var nthLastBusinessDay = FuturesExpiryUtilityFunctions.NthLastBusinessDay(time, 1, holidays);
+                    return FuturesExpiryUtilityFunctions.AddBusinessDays(nthLastBusinessDay, -7, t => FuturesExpiryUtilityFunctions.NotHoliday(t, holidays))
+                                                        .Add(new TimeSpan(13, 0, 0));
+                })
+            },
+
             // Energies group
             // Propane Non LDH Mont Belvieu (1S): https://www.cmegroup.com/trading/energy/petrochemicals/propane-non-ldh-mt-belvieu-opis-balmo-swap_contract_specifications.html
             {Futures.Energies.PropaneNonLDHMontBelvieu, (time =>

@@ -58,6 +58,7 @@ namespace QuantConnect
 
             Tuple.Create(SGX, 22),
             Tuple.Create(OseJpn, 23),
+            Tuple.Create(CDE, 24),
         };
 
         static Market()
@@ -186,6 +187,11 @@ namespace QuantConnect
         /// Osaka Securities Exchange
         /// </summary>
         public const string OseJpn = "ose.jpn";
+
+        /// <summary>
+        /// Montreal Exchange (CDE)
+        /// </summary>
+        public const string CDE = "cde";
 
         /// <summary>
         /// Adds the specified market to the map of available markets with the specified identifier.

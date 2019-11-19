@@ -688,6 +688,11 @@ namespace QuantConnect.Securities
             /// JGB Index Future
             /// </summary>
             public const string JGB = "JGB";
+
+            /// <summary>
+            /// CGB Future
+            /// </summary>
+            public const string CGB = "CGB";
         }
 
         /// <summary>

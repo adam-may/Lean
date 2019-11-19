@@ -30,7 +30,7 @@ namespace QuantConnect.Securities.Future
         /// </summary>
         /// <param name="time">The current Time</param>
         /// <param name="n">Number of business days succeeding current time. Use negative value for preceding business days</param>
-        /// <param name="holidayFunc">Function used to check dates for holidays. Defaults to NotHoliday()</param>
+        /// <param name="notHolidayFunc">Function used to check dates for holidays. Defaults to NotHoliday()</param>
         /// <returns>The date-time after adding n business days</returns>
         public static DateTime AddBusinessDays(DateTime time, int n, Func<DateTime, bool> notHolidayFunc = null)
         {
