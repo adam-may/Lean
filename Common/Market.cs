@@ -59,7 +59,8 @@ namespace QuantConnect
             Tuple.Create(SGX, 22),
             Tuple.Create(OseJpn, 23),
             Tuple.Create(CDE, 24),
-            Tuple.Create(SNFE, 25)
+            Tuple.Create(SNFE, 25),
+            Tuple.Create(DTB, 26)
         };
 
         static Market()
@@ -198,6 +199,11 @@ namespace QuantConnect
         /// ASX 24 (SNFE)
         /// </summary>
         public const string SNFE = "snfe";
+
+        /// <summary>
+        /// Eurex (DTB)
+        /// </summary>
+        public const string DTB = "dtb";
 
         /// <summary>
         /// Adds the specified market to the map of available markets with the specified identifier.

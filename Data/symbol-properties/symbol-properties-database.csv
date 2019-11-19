@@ -233,6 +233,7 @@ sgx,SGB,future,SGX Mini JGB,JPY,100000,0.01,1
 ose.jpn,JGB,future,JGB Future,JPY,1000000,0.01,1
 cde,CGB,future,CGB Future,CAD,1000,0.01,1
 snfe,XT,future,XT Future,AUD,11733,0.005,1
+dtb,GBL,future,EuroBund Future,EUR,1000,0.01,1
 
 fxcm,AUDCAD,forex,,CAD,1,0.00001,1000
 fxcm,AUDCHF,forex,,CHF,1,0.00001,1000

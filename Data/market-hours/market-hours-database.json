@@ -23360,9 +23360,62 @@
         "12/31/2019": "12:30:00"
       }
     },
-    "Option-usa-[*]": {
-      "dataTimeZone": "America/New_York",
-      "exchangeTimeZone": "America/New_York",
+    "Future-dtb-GBL": {
+      "dataTimeZone": "UTC",
+      "exchangeTimeZone": "Europe/Berlin",
+      "sunday": [],
+      "monday": [
+        {
+          "start": "01:15:00",
+          "end": "22:05:00",
+          "state": "market"
+        }
+      ],
+      "tuesday": [
+        {
+          "start": "01:15:00",
+          "end": "22:05:00",
+          "state": "market"
+        }
+      ],
+      "wednesday": [
+        {
+          "start": "01:15:00",
+          "end": "22:05:00",
+          "state": "market"
+        }
+      ],
+      "thursday": [
+        {
+          "start": "01:15:00",
+          "end": "22:05:00",
+          "state": "market"
+        }
+      ],
+      "friday": [
+        {
+          "start": "01:15:00",
+          "end": "22:05:00",
+          "state": "market"
+        }
+      ],
+      "saturday": [],
+      "holidays": [
+        "01/01/2019",
+        "04/19/2019",
+        "04/22/2019",
+        "05/01/2019",
+        "12/24/2019",
+        "12/25/2019",
+        "12/26/2019",
+        "12/31/2019"
+      ],
+      "earlycloses": {
+      }
+    },
+    "option-usa-[*]": {
+      "datatimezone": "america/new_york",
+      "exchangetimezone": "america/new_york",
       "sunday": [],
       "monday": [
         {
@@ -23644,9 +23697,9 @@
         "12/25/2023"
       ]
     },
-    "Forex-fxcm-[*]": {
-      "dataTimeZone": "UTC-05",
-      "exchangeTimeZone": "America/New_York",
+    "forex-fxcm-[*]": {
+      "datatimezone": "utc-05",
+      "exchangetimezone": "america/new_york",
       "sunday": [
         {
           "start": "17:00:00",
@@ -23740,14 +23793,14 @@
         "12/26/2019",
         "12/31/2017"
       ],
-      "earlyCloses": {
+      "earlycloses": {
         "12/24/2018": "14:00:00",
         "12/31/2018": "14:00:00"
       }
     },
-    "Forex-oanda-[*]": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "America/New_York",
+    "forex-oanda-[*]": {
+      "datatimezone": "utc",
+      "exchangetimezone": "america/new_york",
       "sunday": [
         {
           "start": "17:00:00",
@@ -23810,7 +23863,7 @@
         "12/25/2024",
         "12/25/2025"
       ],
-      "earlyCloses": {
+      "earlycloses": {
         "12/30/2005": "17:00:00",
         "12/29/2005": "17:00:00",
         "12/31/2007": "17:00:00",
@@ -23833,16 +23886,16 @@
         "12/31/2024": "17:00:00",
         "12/31/2025": "17:00:00"
       },
-      "lateOpens": {
+      "lateopens": {
         "12/25/2018": "17:00:00",
         "1/1/2019": "17:00:00",
         "12/25/2019": "17:00:00",
         "1/1/2020": "17:00:00"
       }
     },
-    "Cfd-fxcm-[*]": {
-      "dataTimeZone": "UTC-05",
-      "exchangeTimeZone": "UTC-05",
+    "cfd-fxcm-[*]": {
+      "datatimezone": "utc-05",
+      "exchangetimezone": "utc-05",
       "sunday": [
         {
           "start": "17:00:00",
@@ -23888,9 +23941,9 @@
       "saturday": [],
       "holidays": []
     },
-    "Cfd-fxcm-AU200AUD": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "UTC",
+    "cfd-fxcm-au200aud": {
+      "datatimezone": "utc",
+      "exchangetimezone": "utc",
       "sunday": [
         {
           "start": "22:50:00",
@@ -24030,9 +24083,9 @@
         "12/27/2022"
       ]
     },
-    "Cfd-fxcm-BCOUSD": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "UTC",
+    "cfd-fxcm-bcousd": {
+      "datatimezone": "utc",
+      "exchangetimezone": "utc",
       "sunday": [],
       "monday": [
         {
@@ -24087,9 +24140,9 @@
         "12/26/2022"
       ]
     },
-    "Cfd-fxcm-CH20CHF": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "UTC",
+    "cfd-fxcm-ch20chf": {
+      "datatimezone": "utc",
+      "exchangetimezone": "utc",
       "sunday": [],
       "monday": [
         {
@@ -24176,9 +24229,9 @@
         "12/26/2022"
       ]
     },
-    "Cfd-fxcm-DE10YBEUR": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "UTC",
+    "cfd-fxcm-de10ybeur": {
+      "datatimezone": "utc",
+      "exchangetimezone": "utc",
       "sunday": [],
       "monday": [
         {
@@ -24265,9 +24318,9 @@
         "12/26/2022"
       ]
     },
-    "Cfd-fxcm-DE30EUR": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "UTC",
+    "cfd-fxcm-de30eur": {
+      "datatimezone": "utc",
+      "exchangetimezone": "utc",
       "sunday": [],
       "monday": [
         {
@@ -24519,9 +24572,9 @@
         "8/31/2026"
       ]
     },
-    "Cfd-fxcm-DXYUSD": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "UTC-05",
+    "cfd-fxcm-dxyusd": {
+      "datatimezone": "utc",
+      "exchangetimezone": "utc-05",
       "sunday": [
         {
           "start": "17:00:00",
@@ -24567,9 +24620,9 @@
       "saturday": [],
       "holidays": []
     },
-    "Cfd-fxcm-ES35EUR": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "UTC",
+    "cfd-fxcm-es35eur": {
+      "datatimezone": "utc",
+      "exchangetimezone": "utc",
       "sunday": [],
       "monday": [
         {
@@ -24612,9 +24665,9 @@
         "4/17/2017"
       ]
     },
-    "Cfd-fxcm-EU50EUR": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "UTC",
+    "cfd-fxcm-eu50eur": {
+      "datatimezone": "utc",
+      "exchangetimezone": "utc",
       "sunday": [],
       "monday": [
         {
@@ -24686,9 +24739,9 @@
 
       ]
     },
-    "Cfd-fxcm-FR40EUR": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "UTC",
+    "cfd-fxcm-fr40eur": {
+      "datatimezone": "utc",
+      "exchangetimezone": "utc",
       "sunday": [],
       "monday": [
         {
@@ -24757,9 +24810,9 @@
         "12/26/2022"
       ]
     },
-    "Cfd-fxcm-HK33HKD": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "UTC",
+    "cfd-fxcm-hk33hkd": {
+      "datatimezone": "utc",
+      "exchangetimezone": "utc",
       "sunday": [],
       "monday": [
         {
@@ -24910,9 +24963,9 @@
 
       ]
     },
-    "Cfd-fxcm-IT40EUR": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "UTC",
+    "cfd-fxcm-it40eur": {
+      "datatimezone": "utc",
+      "exchangetimezone": "utc",
       "sunday": [],
       "monday": [
         {
@@ -24993,9 +25046,9 @@
         "12/26/2022"
       ]
     },
-    "Cfd-fxcm-JP225JPY": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "UTC",
+    "cfd-fxcm-jp225jpy": {
+      "datatimezone": "utc",
+      "exchangetimezone": "utc",
       "sunday": [],
       "monday": [
         {
@@ -25054,9 +25107,9 @@
         "1/2/2023"
       ]
     },
-    "Cfd-fxcm-NAS100USD": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "UTC",
+    "cfd-fxcm-nas100usd": {
+      "datatimezone": "utc",
+      "exchangetimezone": "utc",
       "sunday": [
         {
           "start": "23:00:00",
@@ -25141,9 +25194,9 @@
         "1/2/2023"
       ]
     },
-    "Cfd-fxcm-NATGASUSD": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "UTC",
+    "cfd-fxcm-natgasusd": {
+      "datatimezone": "utc",
+      "exchangetimezone": "utc",
       "sunday": [
         {
           "start": "23:00:00",
@@ -25261,9 +25314,9 @@
         "12/26/2022"
       ]
     },
-    "Cfd-fxcm-SPX500USD": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "UTC",
+    "cfd-fxcm-spx500usd": {
+      "datatimezone": "utc",
+      "exchangetimezone": "utc",
       "sunday": [
         {
           "start": "23:00:00",
@@ -25348,9 +25401,9 @@
         "1/2/2023"
       ]
     },
-    "Cfd-fxcm-UK100GBP": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "UTC",
+    "cfd-fxcm-uk100gbp": {
+      "datatimezone": "utc",
+      "exchangetimezone": "utc",
       "sunday": [],
       "monday": [
         {
@@ -25419,9 +25472,9 @@
         "12/26/2022"
       ]
     },
-    "Cfd-fxcm-US30USD": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "UTC",
+    "cfd-fxcm-us30usd": {
+      "datatimezone": "utc",
+      "exchangetimezone": "utc",
       "sunday": [
         {
           "start": "23:00:00",
@@ -25542,9 +25595,9 @@
         "12/26/2022"
       ]
     },
-    "Cfd-fxcm-WTICOUSD": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "UTC",
+    "cfd-fxcm-wticousd": {
+      "datatimezone": "utc",
+      "exchangetimezone": "utc",
       "sunday": [
         {
           "start": "23:00:00",
@@ -25662,9 +25715,9 @@
         "12/26/2022"
       ]
     },
-    "Cfd-fxcm-XAGUSD": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "UTC",
+    "cfd-fxcm-xagusd": {
+      "datatimezone": "utc",
+      "exchangetimezone": "utc",
       "sunday": [
         {
           "start": "23:00:00",
@@ -25732,9 +25785,9 @@
         "4/14/2017"
       ]
     },
-    "Cfd-fxcm-XAUUSD": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "UTC",
+    "cfd-fxcm-xauusd": {
+      "datatimezone": "utc",
+      "exchangetimezone": "utc",
       "sunday": [
         {
           "start": "23:00:00",
@@ -25802,9 +25855,9 @@
         "4/14/2017"
       ]
     },
-    "Cfd-fxcm-XCUUSD": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "UTC",
+    "cfd-fxcm-xcuusd": {
+      "datatimezone": "utc",
+      "exchangetimezone": "utc",
       "sunday": [
         {
           "start": "23:00:00",
@@ -25872,9 +25925,9 @@
         "4/14/2017"
       ]
     },
-    "Cfd-fxcm-XPDUSD": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "UTC",
+    "cfd-fxcm-xpdusd": {
+      "datatimezone": "utc",
+      "exchangetimezone": "utc",
       "sunday": [
         {
           "start": "23:00:00",
@@ -25942,9 +25995,9 @@
         "4/14/2017"
       ]
     },
-    "Cfd-fxcm-XPTUSD": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "UTC",
+    "cfd-fxcm-xptusd": {
+      "datatimezone": "utc",
+      "exchangetimezone": "utc",
       "sunday": [
         {
           "start": "23:00:00",
@@ -26012,9 +26065,9 @@
         "4/14/2017"
       ]
     },
-    "Cfd-oanda-[*]": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "America/New_York",
+    "cfd-oanda-[*]": {
+      "datatimezone": "utc",
+      "exchangetimezone": "america/new_york",
       "sunday": [
         {
           "start": "17:00:00",
@@ -26059,13 +26112,13 @@
       ],
       "saturday": [],
       "holidays": [],
-      "earlyCloses": {
+      "earlycloses": {
         "12/31/2018": "17:00:00"
       }
     },
-    "Cfd-oanda-AU200AUD": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "Australia/Sydney",
+    "cfd-oanda-au200aud": {
+      "datatimezone": "utc",
+      "exchangetimezone": "australia/sydney",
       "sunday": [
         {
           "start": "17:10:00",
@@ -26318,9 +26371,9 @@
         "6/9/2025"
       ]
     },
-    "Cfd-oanda-BCOUSD": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "America/New_York",
+    "cfd-oanda-bcousd": {
+      "datatimezone": "utc",
+      "exchangetimezone": "america/new_york",
       "sunday": [
         {
           "start": "20:00:00",
@@ -26401,9 +26454,9 @@
         "12/26/2022"
       ]
     },
-    "Cfd-oanda-CH20CHF": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "Europe/Zurich",
+    "cfd-oanda-ch20chf": {
+      "datatimezone": "utc",
+      "exchangetimezone": "europe/zurich",
       "sunday": [],
       "monday": [
         {
@@ -26490,9 +26543,9 @@
         "12/26/2022"
       ]
     },
-    "Cfd-oanda-CORNUSD": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "America/Chicago",
+    "cfd-oanda-cornusd": {
+      "datatimezone": "utc",
+      "exchangetimezone": "america/chicago",
       "sunday": [
         {
           "start": "19:00:00",
@@ -26638,9 +26691,9 @@
         "12/26/2022"
       ]
     },
-    "Cfd-oanda-DE10YBEUR": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "Europe/Berlin",
+    "cfd-oanda-de10ybeur": {
+      "datatimezone": "utc",
+      "exchangetimezone": "europe/berlin",
       "sunday": [],
       "monday": [
         {
@@ -26727,9 +26780,9 @@
         "12/26/2022"
       ]
     },
-    "Cfd-oanda-DE30EUR": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "Europe/Berlin",
+    "cfd-oanda-de30eur": {
+      "datatimezone": "utc",
+      "exchangetimezone": "europe/berlin",
       "sunday": [],
       "monday": [
         {
@@ -26816,9 +26869,9 @@
         "12/26/2022"
       ]
     },
-    "Cfd-oanda-EU50EUR": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "Europe/Berlin",
+    "cfd-oanda-eu50eur": {
+      "datatimezone": "utc",
+      "exchangetimezone": "europe/berlin",
       "sunday": [],
       "monday": [
         {
@@ -27018,9 +27071,9 @@
         "5/1/2030"
       ]
     },
-    "Cfd-oanda-FR40EUR": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "Europe/Paris",
+    "cfd-oanda-fr40eur": {
+      "datatimezone": "utc",
+      "exchangetimezone": "europe/paris",
       "sunday": [],
       "monday": [
         {
@@ -27219,9 +27272,9 @@
         "5/1/2030"
       ]
     },
-    "Cfd-oanda-HK33HKD": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "Asia/Hong_Kong",
+    "cfd-oanda-hk33hkd": {
+      "datatimezone": "utc",
+      "exchangetimezone": "asia/hong_kong",
       "sunday": [],
       "monday": [
         {
@@ -27711,9 +27764,9 @@
         "9/9/2014"
       ]
     },
-    "Cfd-oanda-JP225USD": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "America/Chicago",
+    "cfd-oanda-jp225usd": {
+      "datatimezone": "utc",
+      "exchangetimezone": "america/chicago",
       "sunday": [
         {
           "start": "17:00:00",
@@ -28082,9 +28135,9 @@
         "9/6/2004"
       ]
     },
-    "Cfd-oanda-NAS100USD": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "America/Chicago",
+    "cfd-oanda-nas100usd": {
+      "datatimezone": "utc",
+      "exchangetimezone": "america/chicago",
       "sunday": [
         {
           "start": "17:00:00",
@@ -28245,9 +28298,9 @@
         "12/25/2030"
       ]
     },
-    "Cfd-oanda-NATGASUSD": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "America/New_York",
+    "cfd-oanda-natgasusd": {
+      "datatimezone": "utc",
+      "exchangetimezone": "america/new_york",
       "sunday": [
         {
           "start": "18:00:00",
@@ -28365,9 +28418,9 @@
         "12/26/2022"
       ]
     },
-    "Cfd-oanda-NL25EUR": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "Europe/Amsterdam",
+    "cfd-oanda-nl25eur": {
+      "datatimezone": "utc",
+      "exchangetimezone": "europe/amsterdam",
       "sunday": [],
       "monday": [
         {
@@ -28539,9 +28592,9 @@
         "5/1/2030"
       ]
     },
-    "Cfd-oanda-SG30SGD": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "Asia/Singapore",
+    "cfd-oanda-sg30sgd": {
+      "datatimezone": "utc",
+      "exchangetimezone": "asia/singapore",
       "sunday": [
         {
           "start": "00:30:00",
@@ -28668,9 +28721,9 @@
         "12/26/2022"
       ]
     },
-    "Cfd-oanda-SOYBNUSD": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "America/Chicago",
+    "cfd-oanda-soybnusd": {
+      "datatimezone": "utc",
+      "exchangetimezone": "america/chicago",
       "sunday": [
         {
           "start": "19:00:00",
@@ -28816,9 +28869,9 @@
         "12/26/2022"
       ]
     },
-    "Cfd-oanda-SPX500USD": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "America/Chicago",
+    "cfd-oanda-spx500usd": {
+      "datatimezone": "utc",
+      "exchangetimezone": "america/chicago",
       "sunday": [
         {
           "start": "17:00:00",
@@ -28979,9 +29032,9 @@
         "12/25/2030"
       ]
     },
-    "Cfd-oanda-SUGARUSD": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "America/New_York",
+    "cfd-oanda-sugarusd": {
+      "datatimezone": "utc",
+      "exchangetimezone": "america/new_york",
       "sunday": [],
       "monday": [
         {
@@ -29075,9 +29128,9 @@
         "12/26/2022"
       ]
     },
-    "Cfd-oanda-UK100GBP": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "Europe/London",
+    "cfd-oanda-uk100gbp": {
+      "datatimezone": "utc",
+      "exchangetimezone": "europe/london",
       "sunday": [],
       "monday": [
         {
@@ -29329,9 +29382,9 @@
         "12/26/2030"
       ]
     },
-    "Cfd-oanda-UK10YBGBP": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "Europe/London",
+    "cfd-oanda-uk10ybgbp": {
+      "datatimezone": "utc",
+      "exchangetimezone": "europe/london",
       "sunday": [],
       "monday": [
         {
@@ -29400,9 +29453,9 @@
         "12/26/2022"
       ]
     },
-    "Cfd-oanda-US2000USD": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "America/New_York",
+    "cfd-oanda-us2000usd": {
+      "datatimezone": "utc",
+      "exchangetimezone": "america/new_york",
       "sunday": [
         {
           "start": "18:00:00",
@@ -29540,9 +29593,9 @@
         "6/11/2004"
       ]
     },
-    "Cfd-oanda-US30USD": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "America/Chicago",
+    "cfd-oanda-us30usd": {
+      "datatimezone": "utc",
+      "exchangetimezone": "america/chicago",
       "sunday": [
         {
           "start": "17:00:00",
@@ -29726,9 +29779,9 @@
         "9/6/2004"
       ]
     },
-    "Cfd-oanda-USB02YUSD": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "America/Chicago",
+    "cfd-oanda-usb02yusd": {
+      "datatimezone": "utc",
+      "exchangetimezone": "america/chicago",
       "sunday": [
         {
           "start": "17:00:00",
@@ -29849,9 +29902,9 @@
         "12/26/2022"
       ]
     },
-    "Cfd-oanda-USB05YUSD": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "America/Chicago",
+    "cfd-oanda-usb05yusd": {
+      "datatimezone": "utc",
+      "exchangetimezone": "america/chicago",
       "sunday": [
         {
           "start": "17:00:00",
@@ -29972,9 +30025,9 @@
         "12/26/2022"
       ]
     },
-    "Cfd-oanda-USB10YUSD": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "America/Chicago",
+    "cfd-oanda-usb10yusd": {
+      "datatimezone": "utc",
+      "exchangetimezone": "america/chicago",
       "sunday": [
         {
           "start": "17:00:00",
@@ -30095,9 +30148,9 @@
         "12/26/2022"
       ]
     },
-    "Cfd-oanda-USB30YUSD": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "America/Chicago",
+    "cfd-oanda-usb30yusd": {
+      "datatimezone": "utc",
+      "exchangetimezone": "america/chicago",
       "sunday": [
         {
           "start": "17:00:00",
@@ -30218,9 +30271,9 @@
         "12/26/2022"
       ]
     },
-    "Cfd-oanda-WHEATUSD": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "America/Chicago",
+    "cfd-oanda-wheatusd": {
+      "datatimezone": "utc",
+      "exchangetimezone": "america/chicago",
       "sunday": [
         {
           "start": "19:00:00",
@@ -30366,9 +30419,9 @@
         "12/26/2022"
       ]
     },
-    "Cfd-oanda-WTICOUSD": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "America/New_York",
+    "cfd-oanda-wticousd": {
+      "datatimezone": "utc",
+      "exchangetimezone": "america/new_york",
       "sunday": [
         {
           "start": "18:00:00",
@@ -30486,9 +30539,9 @@
         "12/26/2022"
       ]
     },
-    "Cfd-oanda-XAGAUD": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "UTC",
+    "cfd-oanda-xagaud": {
+      "datatimezone": "utc",
+      "exchangetimezone": "utc",
       "sunday": [
         {
           "start": "23:00:00",
@@ -30556,9 +30609,9 @@
         "4/14/2017"
       ]
     },
-    "Cfd-oanda-XAGCAD": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "UTC",
+    "cfd-oanda-xagcad": {
+      "datatimezone": "utc",
+      "exchangetimezone": "utc",
       "sunday": [
         {
           "start": "23:00:00",
@@ -30626,9 +30679,9 @@
 
       ]
     },
-    "Cfd-oanda-XAGCHF": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "UTC",
+    "cfd-oanda-xagchf": {
+      "datatimezone": "utc",
+      "exchangetimezone": "utc",
       "sunday": [
         {
           "start": "23:00:00",
@@ -30696,9 +30749,9 @@
         "4/14/2017"
       ]
     },
-    "Cfd-oanda-XAGEUR": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "UTC",
+    "cfd-oanda-xageur": {
+      "datatimezone": "utc",
+      "exchangetimezone": "utc",
       "sunday": [
         {
           "start": "23:00:00",
@@ -30766,9 +30819,9 @@
         "4/14/2017"
       ]
     },
-    "Cfd-oanda-XAGGBP": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "UTC",
+    "cfd-oanda-xaggbp": {
+      "datatimezone": "utc",
+      "exchangetimezone": "utc",
       "sunday": [
         {
           "start": "23:00:00",
@@ -30836,9 +30889,9 @@
         "4/14/2017"
       ]
     },
-    "Cfd-oanda-XAGHKD": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "UTC",
+    "cfd-oanda-xaghkd": {
+      "datatimezone": "utc",
+      "exchangetimezone": "utc",
       "sunday": [
         {
           "start": "23:00:00",
@@ -30906,9 +30959,9 @@
         "4/14/2017"
       ]
     },
-    "Cfd-oanda-XAGJPY": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "UTC",
+    "cfd-oanda-xagjpy": {
+      "datatimezone": "utc",
+      "exchangetimezone": "utc",
       "sunday": [
         {
           "start": "23:00:00",
@@ -30976,9 +31029,9 @@
         "4/14/2017"
       ]
     },
-    "Cfd-oanda-XAGNZD": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "UTC",
+    "cfd-oanda-xagnzd": {
+      "datatimezone": "utc",
+      "exchangetimezone": "utc",
       "sunday": [
         {
           "start": "23:00:00",
@@ -31046,9 +31099,9 @@
         "4/14/2017"
       ]
     },
-    "Cfd-oanda-XAGSGD": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "UTC",
+    "cfd-oanda-xagsgd": {
+      "datatimezone": "utc",
+      "exchangetimezone": "utc",
       "sunday": [
         {
           "start": "23:00:00",
@@ -31116,9 +31169,9 @@
         "4/14/2017"
       ]
     },
-    "Cfd-oanda-XAGUSD": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "UTC",
+    "cfd-oanda-xagusd": {
+      "datatimezone": "utc",
+      "exchangetimezone": "utc",
       "sunday": [
         {
           "start": "23:00:00",
@@ -31186,9 +31239,9 @@
         "4/14/2017"
       ]
     },
-    "Cfd-oanda-XAUAUD": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "UTC",
+    "cfd-oanda-xauaud": {
+      "datatimezone": "utc",
+      "exchangetimezone": "utc",
       "sunday": [
         {
           "start": "23:00:00",
@@ -31256,9 +31309,9 @@
         "4/14/2017"
       ]
     },
-    "Cfd-oanda-XAUCAD": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "UTC",
+    "cfd-oanda-xaucad": {
+      "datatimezone": "utc",
+      "exchangetimezone": "utc",
       "sunday": [
         {
           "start": "23:00:00",
@@ -31326,9 +31379,9 @@
         "4/14/2017"
       ]
     },
-    "Cfd-oanda-XAUCHF": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "UTC",
+    "cfd-oanda-xauchf": {
+      "datatimezone": "utc",
+      "exchangetimezone": "utc",
       "sunday": [
         {
           "start": "23:00:00",
@@ -31396,9 +31449,9 @@
         "4/14/2017"
       ]
     },
-    "Cfd-oanda-XAUEUR": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "UTC",
+    "cfd-oanda-xaueur": {
+      "datatimezone": "utc",
+      "exchangetimezone": "utc",
       "sunday": [
         {
           "start": "23:00:00",
@@ -31466,9 +31519,9 @@
         "4/14/2017"
       ]
     },
-    "Cfd-oanda-XAUGBP": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "UTC",
+    "cfd-oanda-xaugbp": {
+      "datatimezone": "utc",
+      "exchangetimezone": "utc",
       "sunday": [
         {
           "start": "23:00:00",
@@ -31536,9 +31589,9 @@
         "4/14/2017"
       ]
     },
-    "Cfd-oanda-XAUHKD": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "UTC",
+    "cfd-oanda-xauhkd": {
+      "datatimezone": "utc",
+      "exchangetimezone": "utc",
       "sunday": [
         {
           "start": "23:00:00",
@@ -31606,9 +31659,9 @@
         "4/14/2017"
       ]
     },
-    "Cfd-oanda-XAUJPY": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "UTC",
+    "cfd-oanda-xaujpy": {
+      "datatimezone": "utc",
+      "exchangetimezone": "utc",
       "sunday": [
         {
           "start": "23:00:00",
@@ -31676,9 +31729,9 @@
         "4/14/2017"
       ]
     },
-    "Cfd-oanda-XAUNZD": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "UTC",
+    "cfd-oanda-xaunzd": {
+      "datatimezone": "utc",
+      "exchangetimezone": "utc",
       "sunday": [
         {
           "start": "23:00:00",
@@ -31746,9 +31799,9 @@
         "4/14/2017"
       ]
     },
-    "Cfd-oanda-XAUSGD": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "UTC",
+    "cfd-oanda-xausgd": {
+      "datatimezone": "utc",
+      "exchangetimezone": "utc",
       "sunday": [
         {
           "start": "23:00:00",
@@ -31816,9 +31869,9 @@
         "4/14/2017"
       ]
     },
-    "Cfd-oanda-XAUUSD": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "UTC",
+    "cfd-oanda-xauusd": {
+      "datatimezone": "utc",
+      "exchangetimezone": "utc",
       "sunday": [
         {
           "start": "23:00:00",
@@ -31886,9 +31939,9 @@
         "4/14/2017"
       ]
     },
-    "Cfd-oanda-XAUXAG": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "UTC",
+    "cfd-oanda-xauxag": {
+      "datatimezone": "utc",
+      "exchangetimezone": "utc",
       "sunday": [
         {
           "start": "23:00:00",
@@ -31956,9 +32009,9 @@
         "4/14/2017"
       ]
     },
-    "Cfd-oanda-XCUUSD": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "America/New_York",
+    "cfd-oanda-xcuusd": {
+      "datatimezone": "utc",
+      "exchangetimezone": "america/new_york",
       "sunday": [
         {
           "start": "18:00:00",
@@ -32026,9 +32079,9 @@
         "4/14/2017"
       ]
     },
-    "Cfd-oanda-XPDUSD": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "UTC",
+    "cfd-oanda-xpdusd": {
+      "datatimezone": "utc",
+      "exchangetimezone": "utc",
       "sunday": [
         {
           "start": "23:00:00",
@@ -32096,9 +32149,9 @@
         "4/14/2017"
       ]
     },
-    "Cfd-oanda-XPTUSD": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "UTC",
+    "cfd-oanda-xptusd": {
+      "datatimezone": "utc",
+      "exchangetimezone": "utc",
       "sunday": [
         {
           "start": "23:00:00",
@@ -32166,9 +32219,9 @@
         "4/14/2017"
       ]
     },
-    "Crypto-gdax-[*]": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "UTC",
+    "crypto-gdax-[*]": {
+      "datatimezone": "utc",
+      "exchangetimezone": "utc",
       "sunday": [
         {
           "start": "00:00:00",
@@ -32240,9 +32293,9 @@
       ],
       "holidays": []
     },
-    "Crypto-bitfinex-[*]": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "UTC",
+    "crypto-bitfinex-[*]": {
+      "datatimezone": "utc",
+      "exchangetimezone": "utc",
       "sunday": [
         {
           "start": "00:00:00",
@@ -32314,9 +32367,9 @@
       ],
       "holidays": []
     },
-    "Base-empty-[*]": {
-      "dataTimeZone": "UTC",
-      "exchangeTimeZone": "UTC",
+    "base-empty-[*]": {
+      "datatimezone": "utc",
+      "exchangetimezone": "utc",
       "sunday": [
         {
           "start": "00:00:00",

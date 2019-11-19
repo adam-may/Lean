@@ -698,6 +698,11 @@ namespace QuantConnect.Securities
             /// XT Future
             /// </summary>
             public const string XT = "XT";
+
+            /// <summary>
+            /// GBL Future
+            /// </summary>
+            public const string GBL = "GBL";
         }
 
         /// <summary>
