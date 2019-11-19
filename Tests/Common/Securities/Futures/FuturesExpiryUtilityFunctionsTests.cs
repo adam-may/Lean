@@ -14,6 +14,7 @@
 */
 
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using NUnit.Framework;
 using QuantConnect.Securities.Future;
@@ -148,6 +149,28 @@ namespace QuantConnect.Tests.Common.Securities.Futures
         [TestCase("07/05/2017")]
         [TestCase("01/01/1998")]
         [TestCase("25/03/2005")]
+        public void NotHoliday_ForAHolidayWithProvidedList_ShouldReturnFalse(string time)
+        {
+            //Arrange
+            var holidays = new HashSet<DateTime>
+                           {
+                               Parse.DateTimeExact("07/05/2017", "dd/MM/yyyy"),
+                               Parse.DateTimeExact("01/01/1998", "dd/MM/yyyy"),
+                               Parse.DateTimeExact("25/03/2005", "dd/MM/yyyy"),
+                           };
+
+            var inputDate = Parse.DateTimeExact(time, "dd/MM/yyyy");
+
+            //Act
+            var calculatedValue = FuturesExpiryUtilityFunctions.NotHoliday(inputDate, holidays);
+
+            //Assert
+            Assert.AreEqual(calculatedValue, false);
+        }
+
+        [TestCase("07/05/2017")]
+        [TestCase("01/01/1998")]
+        [TestCase("25/03/2005")]
         public void NotHoliday_ForAHoliday_ShouldReturnFalse(string time)
         {
             //Arrange
@@ -158,6 +181,28 @@ namespace QuantConnect.Tests.Common.Securities.Futures
 
             //Assert
             Assert.AreEqual(calculatedValue, false);
+        }
+
+        [TestCase("08/05/2017")]
+        [TestCase("05/04/2007")]
+        [TestCase("27/05/2003")]
+        public void NotHoliday_ForABusinessDayWithProvidedList_ShouldReturnTrue(string time)
+        {
+            //Arrange
+            var holidays = new HashSet<DateTime>
+                           {
+                               Parse.DateTimeExact("07/05/2017", "dd/MM/yyyy"),
+                               Parse.DateTimeExact("01/01/1998", "dd/MM/yyyy"),
+                               Parse.DateTimeExact("25/03/2005", "dd/MM/yyyy"),
+                           };
+
+            var inputDate = Parse.DateTimeExact(time, "dd/MM/yyyy");
+
+            //Act
+            var calculatedValue = FuturesExpiryUtilityFunctions.NotHoliday(inputDate, holidays);
+
+            //Assert
+            Assert.AreEqual(calculatedValue, true);
         }
 
         [TestCase("08/05/2017")]

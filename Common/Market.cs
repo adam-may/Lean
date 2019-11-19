@@ -55,6 +55,9 @@ namespace QuantConnect
             Tuple.Create(HitBTC, 19),
             Tuple.Create(OkCoin, 20),
             Tuple.Create(Bitstamp, 21),
+
+            Tuple.Create(SGX, 22),
+            Tuple.Create(OseJpn, 23),
         };
 
         static Market()
@@ -173,6 +176,16 @@ namespace QuantConnect
         /// Bittrex
         /// </summary>
         public const string Bittrex = "bittrex";
+
+        /// <summary>
+        /// Singapore Exchange
+        /// </summary>
+        public const string SGX = "sgx";
+
+        /// <summary>
+        /// Osaka Securities Exchange
+        /// </summary>
+        public const string OseJpn = "ose.jpn";
 
         /// <summary>
         /// Adds the specified market to the map of available markets with the specified identifier.

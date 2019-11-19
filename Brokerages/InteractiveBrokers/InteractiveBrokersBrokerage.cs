@@ -131,7 +131,9 @@ namespace QuantConnect.Brokerages.InteractiveBrokers
             { Market.NYMEX, "NYMEX" },
             { Market.CBOT, "ECBOT" },
             { Market.ICE, "NYBOT" },
-            { Market.CBOE, "CFE" }
+            { Market.CBOE, "CFE" },
+            { Market.SGX, "SGX" },
+            { Market.OseJpn, "OSE.JPN" },
         };
 
         // exchange time zones by symbol

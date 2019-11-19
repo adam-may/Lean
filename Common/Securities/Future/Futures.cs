@@ -678,6 +678,16 @@ namespace QuantConnect.Securities
             /// </summary>
             /// <returns>The symbol</returns>
             public const string FiveYearUSDMACSwap = "F1U";
+
+            /// <summary>
+            /// SGX: Mini JGB Index Future
+            /// </summary>
+            public const string SgxMiniJGBIndex = "SGB";
+
+            /// <summary>
+            /// JGB Index Future
+            /// </summary>
+            public const string JGB = "JGB";
         }
 
         /// <summary>

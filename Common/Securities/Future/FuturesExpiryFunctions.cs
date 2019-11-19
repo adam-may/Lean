@@ -925,6 +925,34 @@ namespace QuantConnect.Securities.Future
             },
             // EuroDollar Futures : TODO London bank calendar
 
+            // 10-Year Mini Japanese Government Bond Futures (SGX listed): https://www2.sgx.com/derivatives/products/minijgb?cc=JB
+            {Futures.Financials.SgxMiniJGBIndex, (time =>
+                {
+                    var jgbExpiryDateFunction = FuturesExpiryDictionary[Futures.Financials.JGB];
+                    var jgbExpiryDate = jgbExpiryDateFunction(time).Date;
+
+                    // 1 business day prior to the JGB expiry date
+                    return FuturesExpiryUtilityFunctions.AddBusinessDays(jgbExpiryDate, -1)
+                                                        .Add(new TimeSpan(17, 16, 0));
+                })
+            },
+
+            // 10-Year Japanese Government Bond Futures: 
+            {Futures.Financials.JGB, (time =>
+                {
+                    var holidays = MarketHoursDatabase.FromDataFolder()
+                        .GetEntry(Market.OseJpn, Futures.Financials.JGB, SecurityType.Future)
+                        .ExchangeHours
+                        .Holidays;
+
+                    // 5th business day prior to each delivery date
+                    // (20th day of each contract month, move-down the date when it is not the business day). 
+                    var twentiethDayOfMonth = time.AddDays(19);
+                    return FuturesExpiryUtilityFunctions.AddBusinessDays(twentiethDayOfMonth, -5, t => FuturesExpiryUtilityFunctions.NotHoliday(t, holidays))
+                                                        .Add(new TimeSpan(15, 01, 0));
+                })
+            },
+
             // Energies group
             // Propane Non LDH Mont Belvieu (1S): https://www.cmegroup.com/trading/energy/petrochemicals/propane-non-ldh-mt-belvieu-opis-balmo-swap_contract_specifications.html
             {Futures.Energies.PropaneNonLDHMontBelvieu, (time =>

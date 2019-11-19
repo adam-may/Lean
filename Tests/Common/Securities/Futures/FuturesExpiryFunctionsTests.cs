@@ -45,6 +45,9 @@ namespace QuantConnect.Tests.Common.Securities.Futures
         private const string TwelveOclock = "12:00:00";
         private const string TwelveOne = "12:01:00";
         private const string FourPmLondonTime = "15:00:00";
+        private const string FiveSixteenSingaporeTime = "17:16:00";
+        private const string ThreeOneJapanTime = "15:01:00";
+
         [TestFixtureSetUp]
         public void Init()
         {
@@ -209,18 +212,20 @@ namespace QuantConnect.Tests.Common.Securities.Futures
             }
         }
 
-        [TestCase(QuantConnect.Securities.Futures.Financials.Y30TreasuryBond, TwelveOne)]
-        [TestCase(QuantConnect.Securities.Futures.Financials.Y10TreasuryNote, TwelveOne)]
-        [TestCase(QuantConnect.Securities.Futures.Financials.Y5TreasuryNote, TwelveOne)]
-        [TestCase(QuantConnect.Securities.Futures.Financials.Y2TreasuryNote, TwelveOne)]
-        [TestCase(QuantConnect.Securities.Futures.Financials.FiveYearUSDMACSwap, TwoPMCentralTime)]
-        public void FinancialsExpiryDateFunction_WithDifferentDates_ShouldFollowContract(string symbol, string dayTime)
+        [TestCase(QuantConnect.Securities.Futures.Financials.Y30TreasuryBond, Market.USA, TwelveOne)]
+        [TestCase(QuantConnect.Securities.Futures.Financials.Y10TreasuryNote, Market.USA, TwelveOne)]
+        [TestCase(QuantConnect.Securities.Futures.Financials.Y5TreasuryNote, Market.USA, TwelveOne)]
+        [TestCase(QuantConnect.Securities.Futures.Financials.Y2TreasuryNote, Market.USA, TwelveOne)]
+        [TestCase(QuantConnect.Securities.Futures.Financials.FiveYearUSDMACSwap, Market.USA, TwoPMCentralTime)]
+        [TestCase(QuantConnect.Securities.Futures.Financials.SgxMiniJGBIndex, Market.SGX, FiveSixteenSingaporeTime)]
+        [TestCase(QuantConnect.Securities.Futures.Financials.JGB, Market.OseJpn, ThreeOneJapanTime)]
+        public void FinancialsExpiryDateFunction_WithDifferentDates_ShouldFollowContract(string symbol, string market, string dayTime)
         {
             Assert.IsTrue(_data.ContainsKey(symbol), "Symbol " + symbol + " not present in Test Data");
             foreach (var date in _data[symbol])
             {
                 //Arrange
-                var security = Symbol.CreateFuture(symbol, Market.USA, date.ContractMonth);
+                var security = Symbol.CreateFuture(symbol, market, date.ContractMonth);
                 var func = FuturesExpiryFunctions.FuturesExpiryFunction(security.ID.Symbol);
 
                 //Act

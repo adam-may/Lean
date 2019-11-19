@@ -30,9 +30,15 @@ namespace QuantConnect.Securities.Future
         /// </summary>
         /// <param name="time">The current Time</param>
         /// <param name="n">Number of business days succeeding current time. Use negative value for preceding business days</param>
+        /// <param name="holidayFunc">Function used to check dates for holidays. Defaults to NotHoliday()</param>
         /// <returns>The date-time after adding n business days</returns>
-        public static DateTime AddBusinessDays(DateTime time, int n)
+        public static DateTime AddBusinessDays(DateTime time, int n, Func<DateTime, bool> notHolidayFunc = null)
         {
+            if (notHolidayFunc == null)
+            {
+                notHolidayFunc = NotHoliday;
+            }
+
             if (n < 0)
             {
                 var businessDays = (-1) * n;
@@ -40,7 +46,7 @@ namespace QuantConnect.Securities.Future
                 do
                 {
                     var previousDay = time.AddDays(-totalDays);
-                    if (NotHoliday(previousDay))
+                    if (notHolidayFunc(previousDay))
                     {
                         businessDays--;
                     }
@@ -56,7 +62,7 @@ namespace QuantConnect.Securities.Future
                 do
                 {
                     var previousDay = time.AddDays(totalDays);
-                    if (NotHoliday(previousDay))
+                    if (notHolidayFunc(previousDay))
                     {
                         businessDays--;
                     }
@@ -221,7 +227,18 @@ namespace QuantConnect.Securities.Future
         /// <returns>True if the time is not a holidays, otherwise returns false</returns>
         public static bool NotHoliday(DateTime time)
         {
-            return time.IsCommonBusinessDay() && !USHoliday.Dates.Contains(time);
+            return NotHoliday(time, USHoliday.Dates);
+        }
+
+        /// <summary>
+        /// Method to check whether a given time is holiday or not
+        /// </summary>
+        /// <param name="time">The DateTime for consideration</param>
+        /// <param name="holidayDates">The list of dates to check aginst</param>
+        /// <returns>True if the time is not a holidays, otherwise returns false</returns>
+        public static bool NotHoliday(DateTime time, HashSet<DateTime> holidayDates)
+        {
+            return time.IsCommonBusinessDay() && !holidayDates.Contains(time);
         }
 
         /// <summary>

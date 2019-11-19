@@ -34,8 +34,11 @@ namespace QuantConnect.Orders.Fees
             new Dictionary<string, Func<decimal, decimal, CashAmount>>();
 
         private readonly Dictionary<string, CashAmount> _futureFee =
-            //                                                               IB fee + exchange fee
-            new Dictionary<string, CashAmount> { { Market.USA, new CashAmount(0.85m + 1, "USD") } };
+            new Dictionary<string, CashAmount>
+            {
+                { Market.USA, new CashAmount(0.85m + 1, "USD") },
+                { Market.SGX, new CashAmount(85.00m, "JPY") },
+            };
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ImmediateFillModel"/>
