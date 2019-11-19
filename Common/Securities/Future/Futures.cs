@@ -693,6 +693,11 @@ namespace QuantConnect.Securities
             /// CGB Future
             /// </summary>
             public const string CGB = "CGB";
+
+            /// <summary>
+            /// XT Future
+            /// </summary>
+            public const string XT = "XT";
         }
 
         /// <summary>

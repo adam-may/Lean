@@ -59,6 +59,7 @@ namespace QuantConnect
             Tuple.Create(SGX, 22),
             Tuple.Create(OseJpn, 23),
             Tuple.Create(CDE, 24),
+            Tuple.Create(SNFE, 25)
         };
 
         static Market()
@@ -192,6 +193,11 @@ namespace QuantConnect
         /// Montreal Exchange (CDE)
         /// </summary>
         public const string CDE = "cde";
+
+        /// <summary>
+        /// ASX 24 (SNFE)
+        /// </summary>
+        public const string SNFE = "snfe";
 
         /// <summary>
         /// Adds the specified market to the map of available markets with the specified identifier.

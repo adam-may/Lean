@@ -968,6 +968,24 @@ namespace QuantConnect.Securities.Future
                 })
             },
 
+            {Futures.Financials.XT, (time =>
+                {
+                    // Trading ceases at 12:00 p.m. on the 15th (or next business day after) of the delivery month
+                    var holidays = MarketHoursDatabase.FromDataFolder()
+                        .GetEntry(Market.SNFE, Futures.Financials.XT, SecurityType.Future)
+                        .ExchangeHours
+                        .Holidays;
+
+                    var expirationDate = time.AddDays(14);
+
+                    if (!FuturesExpiryUtilityFunctions.NotHoliday(expirationDate, holidays))
+                    {
+                        expirationDate = FuturesExpiryUtilityFunctions.AddBusinessDays(expirationDate, 1, t => FuturesExpiryUtilityFunctions.NotHoliday(t, holidays));
+                    }
+
+                    return expirationDate.Add(new TimeSpan(12, 0, 0));
+                })
+            },
             // Energies group
             // Propane Non LDH Mont Belvieu (1S): https://www.cmegroup.com/trading/energy/petrochemicals/propane-non-ldh-mt-belvieu-opis-balmo-swap_contract_specifications.html
             {Futures.Energies.PropaneNonLDHMontBelvieu, (time =>

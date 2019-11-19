@@ -23252,6 +23252,114 @@
         "12/31/2019": "13:00:00"
       }
     },
+    "Future-snfe-XT": {
+      "dataTimeZone": "UTC",
+      "exchangeTimeZone": "Australia/Sydney",
+      "sunday": [],
+      "monday": [
+        {
+          "start": "08:32:00",
+          "end": "16:30:00",
+          "state": "market"
+        },
+        {
+          "start": "17:12:00",
+          "end": "1:00:00:00",
+          "state": "market"
+        }
+      ],
+      "tuesday": [
+        {
+          "start": "00:00:00",
+          "end": "07:30:00",
+          "state": "market"
+        },
+        {
+          "start": "08:32:00",
+          "end": "16:30:00",
+          "state": "market"
+        },
+        {
+          "start": "17:12:00",
+          "end": "1:00:00:00",
+          "state": "market"
+        }
+      ],
+      "wednesday": [
+        {
+          "start": "00:00:00",
+          "end": "07:30:00",
+          "state": "market"
+        },
+        {
+          "start": "08:32:00",
+          "end": "16:30:00",
+          "state": "market"
+        },
+        {
+          "start": "17:12:00",
+          "end": "1:00:00:00",
+          "state": "market"
+        }
+      ],
+      "thursday": [
+        {
+          "start": "00:00:00",
+          "end": "07:30:00",
+          "state": "market"
+        },
+        {
+          "start": "08:32:00",
+          "end": "16:30:00",
+          "state": "market"
+        },
+        {
+          "start": "17:12:00",
+          "end": "1:00:00:00",
+          "state": "market"
+        }
+      ],
+      "friday": [
+        {
+          "start": "00:00:00",
+          "end": "07:30:00",
+          "state": "market"
+        },
+        {
+          "start": "08:32:00",
+          "end": "16:30:00",
+          "state": "market"
+        },
+        {
+          "start": "17:12:00",
+          "end": "1:00:00:00",
+          "state": "market"
+        }
+      ],
+      "saturday": [
+        {
+          "start": "00:00:00",
+          "end": "07:30:00",
+          "state": "market"
+        }
+      ],
+      "holidays": [
+        "01/01/2019",
+        "01/28/2019",
+        "04/19/2019",
+        "04/22/2019",
+        "04/25/2019",
+        "06/10/2019",
+        "12/25/2019",
+        "12/26/2019",
+        "01/01/2020"
+      ],
+      "earlyCloses": {
+        "04/18/2019": "1:00:00:00",
+        "12/24/2019": "12:30:00",
+        "12/31/2019": "12:30:00"
+      }
+    },
     "Option-usa-[*]": {
       "dataTimeZone": "America/New_York",
       "exchangeTimeZone": "America/New_York",

@@ -221,6 +221,7 @@ namespace QuantConnect.Tests.Common.Securities.Futures
         [TestCase(QuantConnect.Securities.Futures.Financials.SgxMiniJGBIndex, Market.SGX, FiveSixteenSingaporeTime)]
         [TestCase(QuantConnect.Securities.Futures.Financials.JGB, Market.OseJpn, ThreeOneJapanTime)]
         [TestCase(QuantConnect.Securities.Futures.Financials.CGB, Market.CDE, OnePM)]
+        [TestCase(QuantConnect.Securities.Futures.Financials.XT, Market.SNFE, TwelveOclock)]
         public void FinancialsExpiryDateFunction_WithDifferentDates_ShouldFollowContract(string symbol, string market, string dayTime)
         {
             Assert.IsTrue(_data.ContainsKey(symbol), "Symbol " + symbol + " not present in Test Data");
