@@ -96,6 +96,7 @@ namespace QuantConnect.Brokerages.InteractiveBrokers
         private readonly IAlgorithm _algorithm;
         private readonly IOrderProvider _orderProvider;
         private readonly ISecurityProvider _securityProvider;
+        private readonly SymbolPropertiesDatabase _symbolPropertiesDatabase;
         private readonly IB.InteractiveBrokersClient _client;
         private readonly string _agentDescription;
 
@@ -269,6 +270,8 @@ namespace QuantConnect.Brokerages.InteractiveBrokers
             _port = port;
             _ibDirectory = ibDirectory;
             _agentDescription = agentDescription;
+
+            _symbolPropertiesDatabase = SymbolPropertiesDatabase.FromDataFolder();
 
             Log.Trace("InteractiveBrokersBrokerage.InteractiveBrokersBrokerage(): Starting IB Automater...");
 
@@ -1803,15 +1806,22 @@ namespace QuantConnect.Brokerages.InteractiveBrokers
         /// <returns>A new IB contract for the order</returns>
         private Contract CreateContract(Symbol symbol, string exchange = null)
         {
+            var security = _securityProvider.GetSecurity(symbol);
+
             var securityType = ConvertSecurityType(symbol.ID.SecurityType);
             var ibSymbol = _symbolMapper.GetBrokerageSymbol(symbol);
+            var market = exchange ?? security.Symbol.ID.Market ?? "Smart";
+
+            var symbolProperties = _symbolPropertiesDatabase.GetSymbolProperties(market, symbol, symbol.SecurityType, "USD");
+
             var contract = new Contract
             {
                 Symbol = ibSymbol,
-                Exchange = exchange ?? "Smart",
+                Exchange = market,
                 SecType = securityType,
-                Currency = Currencies.USD
+                Currency = symbolProperties.QuoteCurrency
             };
+
             if (symbol.ID.SecurityType == SecurityType.Forex)
             {
                 // forex is special, so rewrite some of the properties to make it work
@@ -2196,13 +2206,16 @@ namespace QuantConnect.Brokerages.InteractiveBrokers
             var securityType = ConvertSecurityType(contract);
             var ibSymbol = securityType == SecurityType.Forex ? contract.Symbol + contract.Currency : contract.Symbol;
 
-            var market = InteractiveBrokersBrokerageModel.DefaultMarketMap[securityType];
+            var market = InteractiveBrokersBrokerageModel.UseDefaultFuturesMarket.Contains(contract.Exchange)
+                ? InteractiveBrokersBrokerageModel.DefaultMarketMap[securityType]
+                : contract.Exchange ?? contract.PrimaryExch;
 
             if (securityType == SecurityType.Future)
             {
                 var contractDate = DateTime.ParseExact(contract.LastTradeDateOrContractMonth, DateFormat.EightCharacter, CultureInfo.InvariantCulture);
 
-                return _symbolMapper.GetLeanSymbol(ibSymbol, securityType, market, contractDate);
+                var sym = _symbolMapper.GetLeanSymbol(ibSymbol, securityType, market, contractDate);
+                return sym;
             }
             else if (securityType == SecurityType.Option)
             {
@@ -2390,7 +2403,7 @@ namespace QuantConnect.Brokerages.InteractiveBrokers
                                 }
 
                                 var id = GetNextTickerId();
-                                var contract = CreateContract(subscribeSymbol);
+                                var contract = CreateContract(subscribeSymbol, subscribeSymbol.ID.Market);
 
                                 _requestInformation[id] = $"Subscribe: {symbol.Value} ({contract})";
 
@@ -2753,6 +2766,26 @@ namespace QuantConnect.Brokerages.InteractiveBrokers
         }
 
         /// <summary>
+        /// Method returns a collection of Symbols that are available at the data source. 
+        /// </summary>
+        /// <param name="security">Security to lookup</param>
+        /// <param name="securityCurrency">Expected security currency(if any)</param>
+        /// <param name="securityExchange">Expected security exchange name(if any)</param>
+        /// <returns></returns>
+        public IEnumerable<Symbol> LookupSymbols(Security security, string securityCurrency = null, string securityExchange = null)
+        {
+            var securityType = security.Type;
+            var lookupName = security.Symbol.ID.Symbol;
+
+            // setting up exchange defaults and filters
+            var exchangeSpecifier = securityType == SecurityType.Future
+                ? securityExchange ?? security.Symbol.ID.Market ?? "" 
+                : securityExchange ?? "Smart";
+
+            return LookupSymbols(lookupName, securityType, securityCurrency, exchangeSpecifier);
+        }
+
+        /// <summary>
         /// Method returns a collection of Symbols that are available at the broker.
         /// </summary>
         /// <param name="lookupName">String representing the name to lookup</param>
@@ -2765,17 +2798,17 @@ namespace QuantConnect.Brokerages.InteractiveBrokers
             // connect will throw if it fails
             Connect();
 
-            // setting up exchange defaults and filters
-            var exchangeSpecifier = securityType == SecurityType.Future ? securityExchange ?? "" : securityExchange ?? "Smart";
             var futuresExchanges = _futuresExchanges.Values.Reverse().ToArray();
             Func<string, int> exchangeFilter = exchange => securityType == SecurityType.Future ? Array.IndexOf(futuresExchanges, exchange) : 0;
+
+            var symbol = _symbolPropertiesDatabase.GetSymbolProperties(securityExchange, lookupName, securityType, "USD");
 
             // setting up lookup request
             var contract = new Contract
             {
                 Symbol = _symbolMapper.GetBrokerageRootSymbol(lookupName),
-                Currency = securityCurrency ?? Currencies.USD,
-                Exchange = exchangeSpecifier,
+                Currency = securityCurrency ?? symbol.QuoteCurrency ?? Currencies.USD,
+                Exchange = securityExchange,
                 SecType = ConvertSecurityType(securityType)
             };
 

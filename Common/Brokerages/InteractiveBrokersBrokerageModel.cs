@@ -44,6 +44,15 @@ namespace QuantConnect.Brokerages
             {SecurityType.Cfd, Market.Oanda}
         }.ToReadOnlyDictionary();
 
+        public static readonly HashSet<string> UseDefaultFuturesMarket = new HashSet<string>
+        {
+            "GLOBEX",
+            "NYMEX",
+            "ECBOT",
+            "ICEUS",
+            "CBOE"
+        };
+
         private readonly Type[] _supportedTimeInForces =
         {
             typeof(GoodTilCanceledTimeInForce),

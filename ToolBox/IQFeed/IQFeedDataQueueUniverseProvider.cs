@@ -29,6 +29,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using System.Net;
 using QuantConnect.Lean.Engine.DataFeeds;
+using QuantConnect.Securities;
 
 namespace QuantConnect.ToolBox.IQFeed
 {
@@ -114,6 +115,18 @@ namespace QuantConnect.ToolBox.IQFeed
         public Symbol GetLeanSymbol(string ticker, SecurityType securityType, string market, DateTime expirationDate = default(DateTime), decimal strike = 0, OptionRight optionRight = 0)
         {
             return _tickers.ContainsKey(ticker) ? _tickers[ticker] : Symbol.Empty;
+        }
+
+        /// <summary>
+        /// Method returns a collection of Symbols that are available at IQFeed.
+        /// </summary>
+        /// <param name="security">Security to lookup</param>
+        /// <param name="securityCurrency">Expected security currency(if any)</param>
+        /// <param name="securityExchange">Expected security exchange name(if any)</param>
+        /// <returns></returns>
+        public IEnumerable<Symbol> LookupSymbols(Security security, string securityCurrency = null, string securityExchange = null)
+        {
+            return LookupSymbols(security.Symbol.ID.Symbol, security.Type, securityCurrency, securityExchange);
         }
 
         /// <summary>

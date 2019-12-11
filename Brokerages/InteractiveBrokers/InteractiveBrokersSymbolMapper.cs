@@ -29,12 +29,13 @@ namespace QuantConnect.Brokerages.InteractiveBrokers
         // we have a special treatment of futures, because IB renamed several exchange tickers (like GBP instead of 6B). We fix this: 
         // We map those tickers back to their original names using the map below
         private readonly Dictionary<string, string> _ibNameMap = new Dictionary<string, string>();
+        private readonly Dictionary<string, string> _ibMarketMap = new Dictionary<string, string>();
 
         /// <summary>
         /// Constructs InteractiveBrokersSymbolMapper. Default parameters are used.
         /// </summary>
         public InteractiveBrokersSymbolMapper():
-            this(Path.Combine("InteractiveBrokers", "IB-symbol-map.json"))
+            this(Path.Combine("InteractiveBrokers", "IB-symbol-map.json"), Path.Combine("InteractiveBrokers", "IB-market-map.json"))
         {
         }
 
@@ -42,20 +43,27 @@ namespace QuantConnect.Brokerages.InteractiveBrokers
         /// Constructs InteractiveBrokersSymbolMapper
         /// </summary>
         /// <param name="ibNameMap">New names map (IB -> LEAN)</param>
-        public InteractiveBrokersSymbolMapper(Dictionary<string, string> ibNameMap)
+        /// <param name="ibMarketMap">New market map (IB -> LEAN)</param>
+        public InteractiveBrokersSymbolMapper(Dictionary<string, string> ibNameMap, Dictionary<string, string> ibMarketMap)
         {
             _ibNameMap = ibNameMap;
+            _ibMarketMap = ibMarketMap;
         }
 
         /// <summary>
         /// Constructs InteractiveBrokersSymbolMapper
         /// </summary>
-        /// <param name="ibNameMapFullName">Full file name of the map file</param>
-        public InteractiveBrokersSymbolMapper(string ibNameMapFullName)
+        /// <param name="ibNameMapFullName">Full file name of the name map file</param>
+        /// <param name="ibMarketMapFullName">Full file name of the market map file</param>
+        public InteractiveBrokersSymbolMapper(string ibNameMapFullName, string ibMarketMapFullName)
         {
             if (File.Exists(ibNameMapFullName))
             {
                 _ibNameMap = JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(ibNameMapFullName));
+            }
+            if (File.Exists(ibMarketMapFullName))
+            {
+                _ibMarketMap = JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(ibMarketMapFullName));
             }
         }
         /// <summary>
@@ -118,7 +126,7 @@ namespace QuantConnect.Brokerages.InteractiveBrokers
                 switch (securityType)
                 {
                     case SecurityType.Future:
-                        return Symbol.CreateFuture(GetLeanRootSymbol(brokerageSymbol), market, expirationDate);
+                        return Symbol.CreateFuture(GetLeanRootSymbol(brokerageSymbol), GetLeanMarket(market), expirationDate);
 
                     case SecurityType.Option:
                         return Symbol.CreateOption(brokerageSymbol, market, OptionStyle.American, optionRight, strike, expirationDate);
@@ -136,6 +144,15 @@ namespace QuantConnect.Brokerages.InteractiveBrokers
             }
         }
 
+        /// <summary>
+        /// IB specific version of the market mapping (GetLeanMarket) for future markets
+        /// </summary>
+        /// <param name="brokerageMarket">IB brokerage market</param>
+        /// <returns></returns>
+        public string GetLeanMarket(string brokerageMarket)
+        {
+            return _ibMarketMap.ContainsKey(brokerageMarket) ? _ibMarketMap[brokerageMarket] : brokerageMarket;
+        }
 
         /// <summary>
         /// IB specific versions of the symbol mapping (GetBrokerageRootSymbol) for future root symbols

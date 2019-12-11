@@ -657,6 +657,9 @@
     <Compile Include="Tradier\UserProfile.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="InteractiveBrokers\IB-market-map.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="InteractiveBrokers\IB-symbol-map.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

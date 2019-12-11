@@ -18,6 +18,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using QuantConnect.Securities;
 
 namespace QuantConnect.Interfaces
 {
@@ -27,6 +28,15 @@ namespace QuantConnect.Interfaces
     /// </summary>
     public interface IDataQueueUniverseProvider
     {
+        /// <summary>
+        /// Method returns a collection of Symbols that are available at the data source. 
+        /// </summary>
+        /// <param name="security">Security to lookup</param>
+        /// <param name="securityCurrency">Expected security currency(if any)</param>
+        /// <param name="securityExchange">Expected security exchange name(if any)</param>
+        /// <returns></returns>
+        IEnumerable<Symbol> LookupSymbols(Security security, string securityCurrency = null, string securityExchange = null);
+
         /// <summary>
         /// Method returns a collection of Symbols that are available at the data source. 
         /// </summary>

@@ -25,6 +25,7 @@ using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Diagnostics;
+using QuantConnect.Securities;
 using HistoryRequest = QuantConnect.Data.HistoryRequest;
 using Timer = System.Timers.Timer;
 
@@ -313,14 +314,25 @@ namespace QuantConnect.ToolBox.IQFeed
         /// <summary>
         /// Method returns a collection of Symbols that are available at the data source.
         /// </summary>
-        /// <param name="lookupName">String representing the name to lookup</param>
-        /// <param name="securityType">Expected security type of the returned symbols (if any)</param>
+        /// <param name="security">Security to lookup</param>
         /// <param name="securityCurrency">Expected security currency(if any)</param>
         /// <param name="securityExchange">Expected security exchange name(if any)</param>
         /// <returns></returns>
-        public IEnumerable<Symbol> LookupSymbols(string lookupName, SecurityType securityType, string securityCurrency = null, string securityExchange = null)
+        public IEnumerable<Symbol> LookupSymbols(Security security, string securityCurrency = null, string securityExchange = null)
         {
-            return _symbolUniverse.LookupSymbols(lookupName, securityType, securityCurrency, securityExchange);
+            return LookupSymbols(security.Symbol.ID.Symbol, security.Type, securityCurrency, securityExchange);
+        }
+
+        /// <summary>
+        /// Method returns a collection of Symbols that are available at the data source.
+        /// </summary>
+        /// <param name="security">Security to lookup</param>
+        /// <param name="securityCurrency">Expected security currency(if any)</param>
+        /// <param name="securityExchange">Expected security exchange name(if any)</param>
+        /// <returns></returns>
+        public IEnumerable<Symbol> LookupSymbols(string symbol, SecurityType securityType, string securityCurrency = null, string securityExchange = null)
+        {
+            return _symbolUniverse.LookupSymbols(symbol, securityType, securityCurrency, securityExchange);
         }
     }
 

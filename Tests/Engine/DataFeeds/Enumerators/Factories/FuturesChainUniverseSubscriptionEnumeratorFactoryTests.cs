@@ -138,6 +138,11 @@ namespace QuantConnect.Tests.Engine.DataFeeds.Enumerators.Factories
 
                 return _timeProvider.GetUtcNow().Date.Day >= 18 ? _symbolList2 : _symbolList1;
             }
+
+            public IEnumerable<Symbol> LookupSymbols(Security security, string securityCurrency = null, string securityExchange = null)
+            {
+                return LookupSymbols(security.Symbol.ID.Symbol, security.Type, securityCurrency, securityExchange);
+            }
         }
     }
 }

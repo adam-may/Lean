@@ -1,0 +1,5 @@
+/* This is a manually created file that contains mappings from IB own markets to Lean markets. */
+{
+    "GLOBEX": "USA",
+    "ECBOT": "USA"
+}
