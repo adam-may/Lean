@@ -64,6 +64,11 @@ namespace QuantConnect.Indicators
         public IndicatorDataPoint Current { get; protected set; }
 
         /// <summary>
+        /// Gets the previous values of the indicator, if requested
+        /// </summary>
+        public RollingWindow<IndicatorDataPoint> Previous { get; private set; }
+
+        /// <summary>
         /// Gets the number of samples processed by this indicator
         /// </summary>
         public long Samples { get; private set; }
@@ -98,7 +103,7 @@ namespace QuantConnect.Indicators
                 if (nextResult.Status == IndicatorStatus.Success)
                 {
                     Current = new IndicatorDataPoint(input.EndTime, nextResult.Value);
-
+                    Previous?.Add(Current);
                     // let others know we've produced a new data point
                     OnUpdated(Current);
                 }
@@ -124,12 +129,22 @@ namespace QuantConnect.Indicators
         }
 
         /// <summary>
+        /// Sets up the cache for being able to remember values
+        /// </summary>
+        /// <param name="windowSize">Number of previous values to store</param>
+        public void Remember(int windowSize)
+        {
+            Previous = new RollingWindow<IndicatorDataPoint>(windowSize);
+        }
+
+        /// <summary>
         /// Resets this indicator to its initial state
         /// </summary>
         public virtual void Reset()
         {
             Samples = 0;
             _previousInput.Clear();
+            Previous?.Reset();
             Current = new IndicatorDataPoint(DateTime.MinValue, default(decimal));
         }
 
